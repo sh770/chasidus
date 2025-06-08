@@ -1,1 +1,4 @@
-*token.txt*
+
+# Ignore token files
+.env
+
