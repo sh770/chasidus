@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>שיעורים בחסידות</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>שיעורים בחסידות</h1>
+
+  <!-- התחברות מנהל -->
+  <div id="admin-section" style="margin-bottom: 2em;">
+    <div id="login-form">
+      <label>הכנס טוקן של GitHub:</label>
+      <input type="password" id="token-input">
+      <button onclick="saveToken()">התחבר</button>
+    </div>
+    <div id="admin-tools" style="display: none;">
+      <span>מחובר כמנהל</span>
+      <button onclick="logout()">התנתק</button>
+    </div>
+  </div>
+
+  <!-- הוספת שיעור -->
+  <div id="add-lesson" style="display: none; margin-top: 2em;">
+    <h2>הוסף שיעור חדש</h2>
+    <label>כותרת:</label><br>
+    <input type="text" id="title"><br><br>
+
+    <label>תיאור קצר:</label><br>
+    <input type="text" id="description"><br><br>
+
+    <label>לינק מוטבע מיוטיוב (embed):</label><br>
+    <input type="text" id="youtube"><br><br>
+
+    <button onclick="addLesson()">הוסף שיעור</button>
+  </div>
+
+  <!-- עריכת שיעור -->
+  <div id="edit-lesson" style="display: none; margin-top: 2em;">
+    <h2>ערוך שיעור</h2>
+    <input type="hidden" id="edit-index">
+
+    <label>כותרת:</label><br>
+    <input type="text" id="edit-title"><br><br>
+
+    <label>תיאור:</label><br>
+    <input type="text" id="edit-description"><br><br>
+
+    <label>קישור מוטבע ליוטיוב:</label><br>
+    <input type="text" id="edit-youtube"><br><br>
+
+    <button onclick="saveEditedLesson()">שמור שינויים</button>
+    <button onclick="cancelEdit()">בטל</button>
+  </div>
+
+  <!-- הצגת שיעורים -->
+  <div id="lessons"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
